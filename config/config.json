@@ -1,5 +1,10 @@
 {
-  "production": {
-    "use_env_variable" : "DATABASE_URL"
+  "development": {
+    "username": "edim",
+    "password": "edimdendy",
+    "database": "baymax_db",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "logging": false
   }
 }
