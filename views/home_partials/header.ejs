@@ -24,7 +24,6 @@
   .iris {
     background-image: url("/images/image.jpg");
     background-repeat: no-repeat;
-
     min-height: 80vh;
     background-size: cover;
 }
@@ -37,8 +36,15 @@
     <nav class="red darken-2" role="navigation">
         <div class="nav-wrapper container"><a id="logo-container" href="/" class="brand-logo">Baymax Apps</a>
             <ul class="right hide-on-med-and-down">
+              <% if(name !== 0){ %>
+                <% if(role !== 0){ %>
+              <li>Welcome, <%= name %></li>
+              <li><a href="/logout">Logout</a></li>
+              <% } %>
+                <% }else{ %>
                 <li><a href="/login">Login</a></li>
-                <li><a href="/users/register">Register</a></li>
+                <li><a href="/register">Register</a></li>
+                <% } %>
             </ul>
 
 

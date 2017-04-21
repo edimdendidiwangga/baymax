@@ -18,10 +18,13 @@ module.exports = {
         type: Sequelize.STRING
       },
       password: {
-        type: Sequelize.STRING
-      },
-      diagnosa: {
         type: Sequelize.TEXT
+      },
+      salt: {
+        type: Sequelize.TEXT
+      },
+      role: {
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
