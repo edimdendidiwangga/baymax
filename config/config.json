@@ -1,5 +1,6 @@
 {
   "production": {
-    "set_env_variable" : "DATABASE_URL"
+    "set_env_variable" : "DATABASE_URL",
+    "dialect" : "postgres"
   }
 }
