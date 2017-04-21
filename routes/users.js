@@ -5,7 +5,6 @@ const crypto = require('crypto');
 const shortid = require('shortid');
 /* GET users listing. */
 
-
 router.get('/searchDisease', function(req, res, next) {
   if (req.session.username) {
     model.Penyakit.findAll()
@@ -15,7 +14,8 @@ router.get('/searchDisease', function(req, res, next) {
         item.push(penyakit.name)
       })
       //res.send(item)
-      res.render('users/search_disease', { data : item });
+      res.render('users/search_disease', { data : item, name: req.session.name || 0,
+      role: req.session.role || 0 });
     })
   } else {
       res.render('auth/login')
@@ -32,7 +32,8 @@ router.post('/searchDisease', function(req, res, next) {
     }
   }).then(data=>{
     //res.send(data)
-    res.render('users/search_result_disease', {input:search_disease,  data: data });
+    res.render('users/search_result_disease', {input:search_disease,  data: data, name: req.session.name || 0,
+    role: req.session.role || 0 });
   })
 
 })
@@ -45,7 +46,8 @@ router.get('/searchDiagnosis', function(req, res, next) {
         item.push(diagnosa.gejala)
       })
       //res.send(item)
-      res.render('users/search_diagnosis', { data : item });
+      res.render('users/search_diagnosis', { data : item, name: req.session.name || 0,
+      role: req.session.role || 0});
     })
   } else {
       res.render('auth/login')
@@ -64,7 +66,8 @@ let search_gejala = req.body.diagnosis;
     }
   }
 }).then(data=>{
-  res.render('users/search_result_diagnosis', {input:search_gejala, data: data });
+  res.render('users/search_result_diagnosis', {input:search_gejala, data: data, name: req.session.name || 0,
+  role: req.session.role || 0 });
 })
 });
 

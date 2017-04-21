@@ -13,7 +13,10 @@ router.get('/login', function(req, res, next) {
     if (req.session.username) {
         res.redirect('/')
     } else {
-        res.render('auth/login')
+        res.render('auth/login', {
+            name: req.session.name || 0,
+            role: req.session.role || 0
+         })
     }
 })
 
@@ -22,7 +25,10 @@ router.get('/register', function(req, res, next) {
     if (req.session.username) {
       res.redirect('/')
     } else {
-      res.render('auth/register')
+      res.render('auth/register', {
+          name: req.session.name || 0,
+          role: req.session.role || 0
+       })
     }
 })
 

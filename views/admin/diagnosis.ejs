@@ -4,6 +4,8 @@
         <div class="section">
             <div class="row">
               <h2>Diagnosis List</h2>
+              <a href='/admin/add_diagnosis' class="waves-effect waves-light btn"><i class="material-icons left">assignment</i>ADD</a>
+              <br>
               <table id="example" class="striped" width="50%" cellspacing="0">
                 <thead>
                   <tr>
@@ -17,13 +19,13 @@
                     <tr>
                       <td><%= list.Penyakit.name %></td>
                       <td><%= list.dataValues.gejala %></td>
-                      <td><a href="edit_gejala/<%= list.id %>">Edit</a></td>
-                      <td><a id="delete" onclick="return confirm('Are you sure?')" href="delete_gejala/<%= list.id %>">Delete</a></td>
+                      <td><a href="edit_gejala/<%= list.id %>" class="btn-flat blue"><i class="material-icons">edit</i></a></td>
+                      <td><a id="delete" onclick="return confirm('Are you sure?')" href="delete_gejala/<%= list.id %>" class="btn-flat red"><i class="material-icons">delete</i></a></td>
                     </tr>
                   <% }) %>
                 </tbody>
               </table>
-              <a href='/admin/add_diagnosis' class="waves-effect waves-light btn"><i class="material-icons left">assignment</i>ADD</a>
+
             </div>
         </div>
     </div>

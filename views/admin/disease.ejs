@@ -4,6 +4,8 @@
         <div class="section">
             <div class="row">
               <h2>Diseases List</h2>
+              <a href='add_disease' class="waves-effect waves-light btn"><i class="material-icons left">assignment</i>ADD</a>
+            <br>
               <!-- coding here -->
               <table class="striped">
                 <thead>
@@ -22,15 +24,13 @@
                       <td><%= list.name %></td>
                       <td><%= list.deskripsi.slice(0,40)+"..." %></td>
                       <td><%= list.solusi.slice(0,40)+"..." %></td>
-                      <td><a href="edit_penyakit/<%= list.id %>">Edit</a></td>
-                      <td><a id="delete" onclick="return confirm('Are you sure?')" href="delete_penyakit/<%= list.id %>">Delete</a></td>
+                      <td><a href="edit_penyakit/<%= list.id %>" class="btn-flat blue"><i class="material-icons">edit</i></a></td>
+                      <td><a id="delete" onclick="return confirm('Are you sure?')" class="btn-flat red" href="delete_penyakit/<%= list.id %>"><i class="material-icons">delete</i></a></td>
                     </tr>
                   <% }) %>
                 </tbody>
               </table>
-
-              <a href='add_disease' class="waves-effect waves-light btn"><i class="material-icons left">assignment</i>ADD</a>
-            </div>
+              </div>
         </div>
     </div>
 

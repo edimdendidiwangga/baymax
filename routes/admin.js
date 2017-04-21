@@ -26,7 +26,7 @@ router.post('/add_disease',function(req, res, next) {
   db.Penyakit.create(
     {name: req.body.name, deskripsi: req.body.description , solusi: req.body.solution}
   ).then(data => {
-    res.redirect('/admin/')
+    res.redirect('/admin/disease')
   })
 })
 //------------------------- GEJALA --------------------------------------------
@@ -52,7 +52,7 @@ router.post('/add_diagnosis',function(req, res, next) {
   db.Diagnosa.create(
     {gejala: req.body.indication, penyakit_id: req.body.penyakit_id}
   ).then(data => {
-    res.redirect('/admin/')
+    res.redirect('/admin/diagnosis')
   })
 })
 
