@@ -1,10 +1,10 @@
-<% include ./partials/header %>
+<% include ../partials/header %>
 
     <div class="container">
         <div class="section">
             <div class="row">
 
-              <form class="col s12" action="/login" method="post">
+              <form class="col s12" action="/users/login" method="post">
             <div class='row'>
               <div class='col s12'>
                 <h3>Login</h3>
@@ -24,7 +24,7 @@
                 <input class='validate' type='password' name='password' id='password' />
                 <label for='password'>Enter your password</label>
               </div>
-            
+
             </div>
 
             <br />
@@ -39,4 +39,4 @@
         </div>
     </div>
 <br><br>
-    <% include ./partials/footer %>
+    <% include ../partials/footer %>
